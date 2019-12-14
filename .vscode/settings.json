@@ -8,6 +8,7 @@
         "typeinfo": "cpp",
         "sstream": "cpp",
         "string": "cpp",
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "typeindex": "cpp"
     }
 }

@@ -6,10 +6,25 @@ void user_panel();
 void user_login();
 
 string username;
+string userid;
+string userbooks;
+vector<string> userbooksvect;
 
-           vector<string> myvect;
-           
+vector<string> myvect;
 
+
+string bookid;
+string bookname;
+string bookauthor;
+
+
+void saveuser(){
+
+	string usrstr="\n"+userid+"|"+username+"|"+userbooks;
+				  ofstream out("users.db", ios::app);
+  				out << usrstr;
+
+}
 
 
 void setupuser(){
@@ -18,6 +33,11 @@ void setupuser(){
            tokenize(user,'|', uservect);
     		string name =uservect[1];
             if(username==name){
+							userid=uservect[0];
+							userbooks=uservect[2];
+
+           tokenize(uservect[2],'&', userbooksvect);
+							
 				   for (auto &vectitem: uservect) {
 					   myvect.push_back(vectitem);
 					   cout<<vectitem<<endl;
@@ -111,9 +131,9 @@ void my_books(){
 void book_loan(){
 
    system("clear");
-cout<< "\tAvailable Books"<<endl;
+	cout<< "\tAvailable Books"<<endl;
 
-for (auto &abook: books) {
+	for (auto &abook: books) {
                                 vector<string> bookvect;
                                 tokenize(abook,'|',  bookvect);
 
@@ -121,7 +141,7 @@ for (auto &abook: books) {
 									cout<<"Book ID :"<< bookvect[0]<<endl;
 									cout<<"Book Name :"<< bookvect[1]<<endl<<endl;
 								}
-}
+	}
 
 
                 cout<<"\tEnter Book ID to Loan\n";
@@ -131,21 +151,84 @@ for (auto &abook: books) {
 
 
 
-bool idmatch=false;
-for (auto &abook: books) {
-                                vector<string> bookvect;
-                                tokenize(abook,'|',  bookvect);
+	bool idmatch=false;
 
-								if(bookvect[0]==inpbookid){
-									idmatch=true;
-									
-								}
 
-}
 
-if(idmatch==false){
-cout<<"\tInvalid Book ID\n";
-}
+
+    for (int i =0; i<books.size(); i++) { 
+
+        string abook= books[i];
+           vector<string> bookvect;
+           tokenize(abook,'|', bookvect);
+
+
+
+            if(bookvect[0]==inpbookid){
+				idmatch=true;
+
+
+		   	bookid=bookvect[0];
+            bookname=bookvect[1];
+			bookauthor=bookvect[2];
+			string bookuser=userid;
+			// cout<<bookuser<<endl;
+
+			    time_t now = time(0);
+    			int timenow = now ;
+
+			string bookdue= inttostr(timenow);
+
+                delete_line("books.db",i+2); 
+
+	string bookstr="\n"+bookid+"|"+bookname+"|"+bookauthor+"|"+bookuser+"|"+bookdue;
+				  ofstream out("books.db", ios::app);
+  				out << bookstr;
+
+
+
+
+
+
+    for (int j =0; j<users.size(); j++) { 
+
+        string auser= users[j];
+           vector<string> uservect;
+           tokenize(auser,'|', uservect);
+
+  if(uservect[0]==userid){
+
+
+	delete_line("users.db",j+2);
+
+	userbooks= userbooks+"&"+bookid;
+
+	saveuser();
+
+  }
+
+
+
+	}
+
+
+
+
+            }
+
+
+     }
+
+
+
+	cout<<"\n\n\n";
+
+
+	if(idmatch==false){
+	cout<<"\tInvalid Book ID\n";
+	}else{
+			cout<<"\t" << bookname <<" loaned to "<<username<<endl;
+	}
 
 
 
@@ -168,10 +251,16 @@ cout<<"\tInvalid Book ID\n";
                 cout << "\t " ;
                 cin>>ch;
 
+				setup();
+				setupuser();
+
 }
 
 
+void book_deposit(){
 
+	
+}
 
 
 
@@ -213,7 +302,7 @@ cin>>ch;
 			book_loan();
 			break;
 		case '3':
-			//book_deposit();
+			book_deposit();
 			break;
 		case '4':
         loginstatus=false;

@@ -163,7 +163,7 @@ void deleteuser(){
 
 
 
-    string idstr;
+
 
     for (int i =0; i<users.size(); i++) { 
 
@@ -174,9 +174,8 @@ void deleteuser(){
 
             if(name==username){
                 cout<<"Deleting "<<name<<endl;
-                cout<<i+2<<endl;
+                // cout<<i+2<<endl;
                 delete_line("users.db",i+2); 
-
             }
      }
 
