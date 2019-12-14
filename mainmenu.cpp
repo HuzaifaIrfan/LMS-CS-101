@@ -10,6 +10,10 @@ void mainmenu(){
 
     while(notexit){
         system("clear");
+
+cout<<"\n\t Library Management System \n\n";
+
+
         cout<<"\n\t Main Menu\n\n";
         cout<<"\t1 Login to Admin Panel\n";
         cout<<"\t2 Login to User Panel\n";
