@@ -380,25 +380,35 @@ void statusbooks(){
     cout<<"Name : "<<bookvect[1]<<endl;
     cout<<"Author : "<<bookvect[2]<<endl;
 
+
+
+
     if(bookvect[3]=="0"){
     cout<<"Status : Not Loaned"<<endl;
     }else{
     
-
+bool found=false;
 
     for (auto &user: users) {
         vector<string> uservect;
         tokenize(user,'|', uservect);
 
         if(uservect[0]==bookvect[3]){
+            found=true;
     cout<<"Status : Loaned by "<<uservect[1]<<endl;
         }
 
     }
 
+    if(found!=true){
+            cout<<"Status : Stolen by deleted User"<<endl;
+    }
+
+
 
 
     }
+
 
 
     cout<<endl;
