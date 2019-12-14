@@ -3,7 +3,21 @@
 using namespace std;
 
 
+void user_panel();
+void user_login();
 
+
+
+
+
+
+
+
+void user_login()
+{
+
+   user_panel();
+}
 
 
 void user_panel()
@@ -13,54 +27,32 @@ void user_panel()
 
     while(loginstatus){
         system("clear");
-        cout << "\n\t Admin Menu" << endl;
-        cout << "\t1. Create User" << endl;
-        cout << "\t2. Delete User" << endl;
-        cout << "\t3. Search User" << endl;
-        cout << "\t4. List of existing Users" << endl;
-        cout << "\t5. Create Book" << endl;
-        cout << "\t6. Delete Book" << endl;
-        cout << "\t7. List of books" << endl;
-        cout << "\t8. List of existing Books and their status" << endl;
-        cout << "\t9. Logout" << endl;
+      
+	char ch;
+		cout << "\n\t User Panel" << endl;
+		cout << "\n\t1. My Books" << endl;
+		cout << "\t2. Loan a book" << endl;
+		cout << "\t3. Deposit book" << endl;
+		cout << "\t4. Logout" << endl;
+  cout << "\t " ;
+cin>>ch;
+		switch (ch)
+		{
+		case '1':
+			//mu books
+		case '2':
+			//book_loan();
+			break;
+		case '3':
+			//book_deposit();
+			break;
+		case '4':
+        loginstatus=false;
+			break;
+		default:
+			cout << "Invalid choice::Please try again!!" << endl;
+		}
 
-        cout << "\t " ;
-	
-        char ch;
-        cin>>ch;
-
-            switch (ch)
-            {
-            case '1':
-            //adduser();
-                break;
-            case '2':
-                //deleteuser();
-                break;
-            case '3':
-                //searchuser();
-                break;
-            case '4':
-                //listusers();
-                break;
-            case '5':
-                //createbook();
-                break;
-            case '6':
-                //deletebook();
-                break;
-            case '7':
-                //listbooks();
-                break;
-            case '8':
-                //statusbooks();
-                break;
-            case '9':
-            loginstatus=false;
-            break;
-            default:
-                cout << "Invalid Choice" << endl;
-            }
 
 
 

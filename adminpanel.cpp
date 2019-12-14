@@ -2,12 +2,14 @@
 
 using namespace std;
 
-
+void admin_panel();
+void admin_login();
 
 
 void admin_login(){
 
-    
+
+admin_panel();
     
 }
 
@@ -20,7 +22,7 @@ void admin_panel()
 
     while(loginstatus){
         system("clear");
-        cout << "\n\t Admin Menu" << endl;
+        cout << "\n\t Admin Menu\n" << endl;
         cout << "\t1. Create User" << endl;
         cout << "\t2. Delete User" << endl;
         cout << "\t3. Search User" << endl;

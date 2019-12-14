@@ -1,5 +1,6 @@
 #include<iostream>
 #include"adminpanel.cpp"
+#include"userpanel.cpp"
 using namespace std;
 
 void mainmenu(){
@@ -9,7 +10,7 @@ void mainmenu(){
 
     while(notexit){
         system("clear");
-        cout<<"\t Main Meni\n";
+        cout<<"\n\t Main Menu\n\n";
         cout<<"\t1 Login to Admin Panel\n";
         cout<<"\t2 Login to User Panel\n";
         cout<<"\t3 EXIT\n";
@@ -24,7 +25,7 @@ void mainmenu(){
                 admin_login();
                 break;
             case '2':
-                //loginuser();
+               user_login();
                 break;
             case '3':
                 notexit=false;

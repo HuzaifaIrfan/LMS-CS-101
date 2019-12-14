@@ -21,6 +21,7 @@ using namespace std;
 int main(){
 
 	mainmenu();
-
+system("clear");
+cout<<"\n\tBye Bye\n\n";
     return 0;
 }
