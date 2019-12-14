@@ -144,15 +144,28 @@ cout<<"You cannot loan more than 3 books\n";
 
 	cout<< "\tAvailable Books"<<endl;
 
+
+bool booksavailable=false;
+
 	for (auto &abook: books) {
                                 vector<string> bookvect;
                                 tokenize(abook,'|',  bookvect);
 
 								if(bookvect[3]=="0"){
+									booksavailable=true;
 									cout<<"Book ID :"<< bookvect[0]<<endl;
 									cout<<"Book Name :"<< bookvect[1]<<endl<<endl;
 								}
+
 	}
+
+
+if(booksavailable==false){
+
+cout<<"\tNo Books Available in the Library\n";
+
+}else{
+
 
 
                 cout<<"\tEnter Book ID to Loan\n";
@@ -252,7 +265,7 @@ cout<<"You cannot loan more than 3 books\n";
 	setupuser();
 
 
-
+}
 
 }
 
@@ -260,6 +273,8 @@ cout<<"You cannot loan more than 3 books\n";
                 char ch;
                 cout << "\t " ;
                 cin>>ch;
+
+
 
 }
 
