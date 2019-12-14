@@ -159,6 +159,93 @@ void adduser(){
 
 
 
+void delete_line(const char *file_name, int n) 
+{ 
+    // open file in read mode or in mode 
+    ifstream is(file_name); 
+  
+    // open file in write mode or out mode 
+    ofstream ofs; 
+    ofs.open("temp.txt", ofstream::out); 
+  
+    // loop getting single characters 
+    char c; 
+    int line_no = 1; 
+    while (is.get(c)) 
+    { 
+        // if a newline character 
+        if (c == '\n') 
+        line_no++; 
+  
+        // file content not to be deleted 
+        if (line_no != n) 
+            ofs << c; 
+    } 
+  
+    // closing output file 
+    ofs.close(); 
+  
+    // closing input file 
+    is.close(); 
+  
+    // remove the original file 
+    remove(file_name); 
+  
+    // rename the file 
+    rename("temp.txt", file_name); 
+} 
+
+
+
+void deleteuser(){
+
+
+    system("clear");
+
+    string username;
+    cout<<"Enter Username to Delete\n";
+    cin>>username;
+
+
+
+
+
+
+    string idstr;
+
+    for (int i =0; i<users.size(); i++) { 
+
+        string user= users[i];
+           vector<string> uservect;
+           tokenize(user,'|', uservect);
+            string name=uservect[1];
+
+            if(name==username){
+                cout<<"Deleting "<<name<<endl;
+                cout<<i+2<<endl;
+                delete_line("users.db",i+2); 
+
+            }
+     }
+
+
+
+
+                cout<<"\t0. EXIT\n";
+
+                
+
+                char ch;
+                cout << "\t " ;
+                cin>>ch;
+
+
+    setup();
+
+}
+
+
+
 
 
 void listusers(){
@@ -391,7 +478,7 @@ void admin_panel()
             adduser();
                 break;
             case '2':
-                //deleteuser();
+                deleteuser();
                 break;
             case '3':
                 //searchuser();
