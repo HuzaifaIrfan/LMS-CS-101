@@ -159,8 +159,7 @@ void adduser(){
 
 
 
-void delete_line(const char *file_name, int n) 
-{ 
+void delete_line(const char *file_name, int n) { 
     // open file in read mode or in mode 
     ifstream is(file_name); 
   
@@ -244,6 +243,83 @@ void deleteuser(){
 
 }
 
+
+
+void searchuser(){
+
+
+    system("clear");
+
+
+    string username;
+    cout<<"Enter Username to Search\n";
+    cin>>username;
+
+
+    bool nf=true;
+
+
+
+   for (auto &user: users) {
+
+           vector<string> uservect;
+           tokenize(user,'|', uservect);
+
+    string name =uservect[1];
+
+            if(name==username){
+                nf=false;
+                cout<<"\tUser Found "<<endl;
+                cout<<"\tID : "<<uservect[0]<<endl;
+                cout<<"\tUserName : "<<name<<endl;
+
+    if(uservect[2]!="0"){
+
+                    vector<string> userbooksvect;
+                     tokenize(uservect[2],'&',  userbooksvect);
+
+            for (auto &bookid: userbooksvect) {
+
+
+                        for (auto &abook: books) {
+
+                                vector<string> bookvect;
+                                tokenize(abook,'|',  bookvect);
+
+                            if(bookid==bookvect[0]){
+
+                            cout<<"Book Name :"<< bookvect[1]<<endl;
+                                
+                            }
+
+
+                        }
+
+
+        }
+
+    }
+
+
+            }
+
+
+     }
+
+            if(nf==true){
+                cout<<"\tUser Not Found "<<endl;
+            }
+
+
+                cout<<"\t0. EXIT\n";
+
+                
+
+                char ch;
+                cout << "\t " ;
+                cin>>ch;
+
+}
 
 
 
@@ -462,10 +538,9 @@ void admin_panel()
         cout << "\t2. Delete User" << endl;
         cout << "\t3. Search User" << endl;
         cout << "\t4. List of existing Users" << endl;
-        cout << "\t5. Create Book" << endl;
-        cout << "\t6. List of books" << endl;
-        cout << "\t7. List of existing Books and their status" << endl;
-        cout << "\t8. Logout" << endl;
+        cout << "\t5. List of books" << endl;
+        cout << "\t6. List of existing Books and their status" << endl;
+        cout << "\t7. Logout" << endl;
 
         cout << "\t " ;
 	
@@ -481,21 +556,18 @@ void admin_panel()
                 deleteuser();
                 break;
             case '3':
-                //searchuser();
+                searchuser();
                 break;
             case '4':
                 listusers();
                 break;
             case '5':
-                //createbook();
-                break;
-            case '6':
                 listbooks();
                 break;
-            case '7':
+            case '6':
                 statusbooks();
                 break;
-            case '8':
+            case '7':
             loginstatus=false;
             break;
             default:
