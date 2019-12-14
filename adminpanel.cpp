@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string>
 #include"lib.cpp"
+#include <ctime>
 using namespace std;
 
 void admin_panel();
@@ -288,8 +289,32 @@ void searchuser(){
 
                             if(bookid==bookvect[0]){
 
-                            cout<<"Book Name :"<< bookvect[1]<<endl;
-                                
+
+                                //outstanding books
+
+    int duedays=5;
+
+
+    time_t now = time(0);
+    int timenow=now ;
+    int timedue=strtoint(bookvect[4]) ;
+
+    // cout<<"\t"<<timenow<<endl;
+    // cout<<"\t"<<timedue<<endl;
+
+    int difference=timenow-timedue;
+
+    if(difference > (86400*duedays)){
+        int passed=difference/86400;
+
+        // cout<<"Outstanding book"<<endl;
+
+        cout<<"Book Name :"<< bookvect[1]<<endl;
+        cout<<"Days Passed from due date : "<< passed<<endl;
+    }
+
+
+
                             }
 
 
@@ -298,6 +323,8 @@ void searchuser(){
 
         }
 
+    }else{
+         cout<<"\tNo Books"<<endl;
     }
 
 
