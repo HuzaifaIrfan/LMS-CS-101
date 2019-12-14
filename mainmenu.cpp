@@ -11,7 +11,7 @@ void mainmenu(){
     while(notexit){
         system("clear");
 
-cout<<"\n\t Library Management System \n\n";
+cout<<"\n\t Library Management System \n";
 
 
         cout<<"\n\t Main Menu\n\n";
