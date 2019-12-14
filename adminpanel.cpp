@@ -1,14 +1,71 @@
 #include<iostream>
-
+#include<fstream>
 using namespace std;
 
 void admin_panel();
 void admin_login();
 
 
+
+ifstream usersif("users.db");
+ofstream usersof("users.db");
+
+ifstream booksif("books.db");
+ofstream booksof("books.db");
+
+vector<string> users={};
+vector<string> books={};
+
+void setup(){
+    
+
+
+}
+
+
+
+
+void adduser(){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void admin_login(){
 
-
+setup();
 admin_panel();
     
 }
@@ -41,7 +98,7 @@ void admin_panel()
             switch (ch)
             {
             case '1':
-            //adduser();
+            adduser();
                 break;
             case '2':
                 //deleteuser();
