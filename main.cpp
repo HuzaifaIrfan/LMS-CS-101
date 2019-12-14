@@ -22,6 +22,6 @@ int main(){
 
 	mainmenu();
 system("clear");
-cout<<"\n\tBye Bye\n\n";
+cout<<"\n\tQuit\n\n";
     return 0;
 }

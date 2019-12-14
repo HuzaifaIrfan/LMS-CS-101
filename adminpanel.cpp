@@ -4,6 +4,7 @@
 #include <string>
 #include"lib.cpp"
 #include <ctime>
+#include <bits/stdc++.h>
 using namespace std;
 
 void admin_panel();
@@ -121,7 +122,7 @@ void adduser(){
 
     
     string name;
-    string books="";
+    string books="0";
 
         cout<<"Enter Your Name\n";
         cin>>name;
@@ -351,6 +352,22 @@ void searchuser(){
 
 
 
+bool mycomp(string a, string b){
+	//returns 1 if string a is alphabetically 
+	//less than string b
+	//quite similar to strcmp operation
+	return a<b;
+}
+
+vector<string> alphabaticallySort(vector<string> a){
+	int n=a.size();
+	//mycomp function is the defined function which 
+	//sorts the strings in alphabatical order
+	sort(a.begin(),a.end(),mycomp);
+	return a;
+}
+
+
 void listusers(){
 
     bool notexit=true;
@@ -358,19 +375,21 @@ void listusers(){
         while(notexit){
             system("clear");
 
+            vector<string> usernamelst;
+
             for (auto &user: users) {
-
-
-
     vector<string> uservect;
-
     tokenize(user,'|', uservect);
-            cout<<"Id : "<<uservect[0]<<endl;
-    cout<<"Name : "<<uservect[1]<<endl;
-    
+    usernamelst.push_back(uservect[1]);
             }
 
+    usernamelst=alphabaticallySort(usernamelst);
 
+    cout<<"\t   USERS \n";
+
+            for (auto &username: usernamelst) {
+                cout<<"\t"<<username<<endl;
+            }
 
             cout<<"\t1 EXIT\n";
 
