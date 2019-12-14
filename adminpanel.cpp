@@ -232,9 +232,6 @@ void deleteuser(){
 
 
                 cout<<"\t0. EXIT\n";
-
-                
-
                 char ch;
                 cout << "\t " ;
                 cin>>ch;
@@ -340,9 +337,6 @@ void searchuser(){
 
 
                 cout<<"\t0. EXIT\n";
-
-                
-
                 char ch;
                 cout << "\t " ;
                 cin>>ch;
@@ -353,7 +347,7 @@ void searchuser(){
 
 
 
-
+//sortting
 
 bool mycomp(string a, string b){
 	//returns 1 if string a is alphabetically 
@@ -373,9 +367,7 @@ vector<string> alphabaticallySort(vector<string> a){
 
 void listusers(){
 
-    bool notexit=true;
 
-        while(notexit){
             system("clear");
 
             vector<string> usernamelst;
@@ -394,23 +386,14 @@ void listusers(){
                 cout<<"\t"<<username<<endl;
             }
 
-            cout<<"\t1 EXIT\n";
 
-            
 
-            char ch;
-            cout << "\t " ;
-            cin>>ch;
+                cout<<"\t0. EXIT\n";
+                char ch;
+                cout << "\t " ;
+                cin>>ch;
 
-            switch (ch){
-                case '1':
-                    notexit=false;
-                    break;
-                default:
-                    cout << "Invalid Choice" << endl;
-            }
-
-        }
+        
 
 }
 
@@ -420,9 +403,7 @@ void listusers(){
 
 void statusbooks(){
 
-    bool notexit=true;
 
-        while(notexit){
             system("clear");
 
 
@@ -464,32 +445,18 @@ void statusbooks(){
 
 
 
-        cout<<"\t1 EXIT\n";
-
-        
-
-        char ch;
-        cout << "\t " ;
-        cin>>ch;
-
-        switch (ch){
-            case '1':
-                notexit=false;
-                break;
-            default:
-                cout << "Invalid Choice" << endl;
-        }
-
-    }
+                cout<<"\t0. EXIT\n";
+                char ch;
+                cout << "\t " ;
+                cin>>ch;
+    
 
 }
 
 
 void listbooks(){
 
-    bool notexit=true;
 
-        while(notexit){
             system("clear");
 
 
@@ -514,23 +481,12 @@ void listbooks(){
 
 
 
-            cout<<"\t1 EXIT\n";
+                  cout<<"\t0. EXIT\n";
+                char ch;
+                cout << "\t " ;
+                cin>>ch;
 
-            
-
-            char ch;
-            cout << "\t " ;
-            cin>>ch;
-
-            switch (ch){
-                case '1':
-                    notexit=false;
-                    break;
-                default:
-                    cout << "Invalid Choice" << endl;
-            }
-
-    }
+    
 
 }
 
