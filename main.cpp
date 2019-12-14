@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include <vector>
+#include"lib.cpp"
 #include"mainmenu.cpp"
 using namespace std;
 

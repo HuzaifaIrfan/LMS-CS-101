@@ -1,12 +1,4 @@
 #include<iostream>
-#include<fstream>
-#include <sstream>
-#include <string>
-#include"lib.cpp"
-#include <ctime>
-#include<string>
-#include <vector>
-#include <bits/stdc++.h>
 using namespace std;
 
 void admin_panel();
@@ -92,6 +84,39 @@ void adduser(){
 
     system("clear");
 
+
+    if(users.size()>=10){
+
+  cout<<"Maximum of 10 Users Reached!!\n";
+
+    }else{
+
+  
+    string name;
+    bool samename=false;
+        cout<<"\tEnter Your Name\n\t";
+        cin>>name;
+
+    for (auto &user: users) {
+            vector<string> uservect;
+            tokenize(user,'|', uservect);
+            if(uservect[1]==name){
+                samename=true;
+            }
+    }
+
+
+
+    if(samename==true){
+
+    cout<<"\t User already exists\n";
+
+    }else{
+
+
+
+
+
     int newid=0;
 
     for (auto &user: users) {
@@ -106,11 +131,14 @@ void adduser(){
     newid = newid+1;
 
    string idstr=inttostr(newid);
-    string name;
+
     string books="0";
 
-        cout<<"Enter Your Name\n";
-        cin>>name;
+
+
+
+
+
 
     string user=idstr+"|"+name+"|"+books;
 
@@ -126,19 +154,19 @@ void adduser(){
         cout<<name << " created..\n";
 
 
+    }
+
+    setup();
+
+
+    }
 
 
 
                 cout<<"\t0. EXIT\n";
-
-                
-
                 char ch;
                 cout << "\t " ;
                 cin>>ch;
-
-
-    setup();
 
 }
 
@@ -256,8 +284,8 @@ void searchuser(){
     if(difference > (86400*duedays)){
         int passed=difference/86400;
 
-        // cout<<"Outstanding book"<<endl;
-
+       
+cout<<"Outstanding book"<<endl;
         cout<<"Book Name :"<< bookvect[1]<<endl;
         cout<<"Days Passed from due date : "<< passed<<endl;
     }
@@ -273,7 +301,7 @@ void searchuser(){
         }
 
     }else{
-         cout<<"\tNo Books"<<endl;
+         cout<<"\tNo Books loaned by "<<name<<endl;
     }
 
 

@@ -1,7 +1,13 @@
 #include<iostream>
+#include<fstream>
+#include <sstream>
+#include <string>
+#include <ctime>
 #include<string>
 #include <vector>
 #include <bits/stdc++.h>
+#include <cstdio>
+#include <stdlib.h>
 using namespace std;
 
 
