@@ -1,5 +1,6 @@
 #include<iostream>
 #include<fstream>
+#include"lib.cpp"
 using namespace std;
 
 void admin_panel();
@@ -7,30 +8,125 @@ void admin_login();
 
 
 
-ifstream usersif("users.db");
-ofstream usersof("users.db");
 
-ifstream booksif("books.db");
-ofstream booksof("books.db");
+// ofstream usersof("users.db");
+// ofstream booksof("books.db");
 
 vector<string> users={};
 vector<string> books={};
 
+
+
 void setup(){
+
+users.clear(); 
+books.clear(); 
+
+    ifstream usersif("users.db");
+    ifstream booksif("books.db");
+
+string line;
+
+while(!usersif.eof()){
+
+   getline(usersif,line);
+users.push_back(line);
+
+
+}
+
+usersif.close();
+
+while(!booksif.eof()){
+
+ getline(booksif,line);
     
+books.push_back(line);
 
+}
+booksif.close();
 
 }
 
 
 
 
-void adduser(){
+
+
+
+void listusers(){
+
+ bool notexit=true;
+
+    while(notexit){
+        system("clear");
+
+for (auto &user: users) {
+
+cout<<user<<endl;
 
 }
 
 
 
+        cout<<"\t1 EXIT\n";
+
+        
+
+        char ch;
+        cout << "\t " ;
+        cin>>ch;
+
+        switch (ch){
+            case '1':
+                notexit=false;
+                break;
+            default:
+                cout << "Invalid Choice" << endl;
+        }
+
+    }
+
+}
+
+
+
+
+
+void listbooks(){
+
+ bool notexit=true;
+
+    while(notexit){
+        system("clear");
+
+for (auto &book: books) {
+
+cout<<book<<endl;
+
+}
+
+
+
+        cout<<"\t1 EXIT\n";
+
+        
+
+        char ch;
+        cout << "\t " ;
+        cin>>ch;
+
+        switch (ch){
+            case '1':
+                notexit=false;
+                break;
+            default:
+                cout << "Invalid Choice" << endl;
+        }
+
+    }
+
+}
 
 
 
@@ -98,7 +194,7 @@ void admin_panel()
             switch (ch)
             {
             case '1':
-            adduser();
+            //adduser();
                 break;
             case '2':
                 //deleteuser();
@@ -107,7 +203,7 @@ void admin_panel()
                 //searchuser();
                 break;
             case '4':
-                //listusers();
+                listusers();
                 break;
             case '5':
                 //createbook();
@@ -116,7 +212,7 @@ void admin_panel()
                 //deletebook();
                 break;
             case '7':
-                //listbooks();
+                listbooks();
                 break;
             case '8':
                 //statusbooks();
