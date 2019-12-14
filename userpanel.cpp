@@ -5,15 +5,8 @@ using namespace std;
 
 
 
-void admin_login(){
 
-    
-    
-}
-
-
-
-void admin_panel()
+void user_panel()
 {
 
     bool loginstatus=true;

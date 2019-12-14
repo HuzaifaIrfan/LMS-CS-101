@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include <vector>
-#include"adminpanel.cpp"
+#include"mainmenu.cpp"
 using namespace std;
 
 
@@ -17,13 +17,10 @@ using namespace std;
 
 
 */
+
 int main(){
 
-admin_panel();
-
-
-
-
+	mainmenu();
 
     return 0;
 }
