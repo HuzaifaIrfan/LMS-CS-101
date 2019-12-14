@@ -127,7 +127,7 @@ void adduser(){
         cout<<"Enter Your Name\n";
         cin>>name;
 
-    string user=idstr+"|"+name+"|";
+    string user=idstr+"|"+name+"|"+books;
 
     users.push_back(user);
     saveusers();
@@ -197,7 +197,6 @@ void delete_line(const char *file_name, int n) {
 } 
 
 
-
 void deleteuser(){
 
 
@@ -244,6 +243,7 @@ void deleteuser(){
     setup();
 
 }
+
 
 
 
@@ -348,6 +348,9 @@ void searchuser(){
                 cin>>ch;
 
 }
+
+
+
 
 
 
