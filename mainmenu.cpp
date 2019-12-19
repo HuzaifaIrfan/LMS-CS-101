@@ -13,10 +13,10 @@ using namespace std;
 void mainmenu(){
 
     bool notexit=true;
-screenclear();
+
 
     while(notexit){
-
+screenclear();
 
 cout<<"\n\t Library Management System \n";
 
