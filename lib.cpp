@@ -18,7 +18,7 @@ void exitter(string str){
 
 
                 cout<<"\t "<<str<<"\n";
-                 cout<<"\t Enter any character to return\n";
+                 cout<<"\t Enter any character to return or exit\n";
                 char ch;
                 cout << "\t " ;
                 cin>>ch;
