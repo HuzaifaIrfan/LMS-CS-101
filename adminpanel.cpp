@@ -131,6 +131,42 @@ void adduser(){
             }
     }
 
+
+
+//old users id check
+
+
+
+       ifstream oldusersif("oldusers.db");
+
+
+    string lineold;
+
+    getline(oldusersif,lineold);
+    while(!oldusersif.eof()){
+
+
+   getline(oldusersif,lineold);
+
+            vector<string> uservect;
+            tokenize(lineold,'|', uservect);
+            int idint=strtoint(uservect[0]);
+            if(idint>newid){
+                newid=idint;
+            }
+
+
+    }
+
+    oldusersif.close();
+
+
+    
+
+
+
+
+
     newid = newid+1;
 
    string idstr=inttostr(newid);
@@ -201,6 +237,20 @@ void deleteuser(){
             string name=uservect[1];
 
             if(name==username){
+
+
+//saving to old users.
+
+               string usrstr="\n"+uservect[0]+"|"+uservect[1]+"|"+uservect[2];
+				  ofstream out("oldusers.db", ios::app);
+  				out << usrstr;
+
+
+
+
+
+
+
                 cout<<"Deleting "<<name<<endl;
                 // cout<<i+2<<endl;
                 delete_line("users.db",i+2); 
