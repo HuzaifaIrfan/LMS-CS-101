@@ -166,7 +166,7 @@ void adduser(){
 
 
 
- exitter();
+ exitter("");
 
 }
 
@@ -211,7 +211,7 @@ void deleteuser(){
 
 
 
- exitter();
+ exitter("");
 
     setup();
 
@@ -312,7 +312,7 @@ cout<<"Outstanding book"<<endl;
             }
 
 
- exitter();
+ exitter("");
 
 }
 
@@ -404,14 +404,14 @@ bool found=false;
     }
 
 
+cout<<endl;
 
-    cout<<endl;
 
     }
 
 
 
- exitter();
+ exitter("\n");
     
 
 }
@@ -438,13 +438,13 @@ void listbooks(){
     }
 
 
-    cout<<endl;
 
 
 
 
 
- exitter();
+
+ exitter("\n");
 
     
 
@@ -505,7 +505,7 @@ void admin_panel()
         cout << "\t4. List of existing Users" << endl;
         cout << "\t5. List of books" << endl;
         cout << "\t6. List of existing Books and their status" << endl;
-        cout << "\t7. Logout" << endl;
+        cout << "\t0. Logout" << endl;
 
         cout << "\t " ;
 	
@@ -532,12 +532,13 @@ void admin_panel()
             case '6':
                 statusbooks();
                 break;
-            case '7':
+            case '0':
+            exitter("Logging out Admin Panel");
             loginstatus=false;
             break;
             default:
-                cout << "Invalid Choice" << endl;
-                 exitter();
+      
+                 exitter("Invalid Choice\n");
             }
 
 

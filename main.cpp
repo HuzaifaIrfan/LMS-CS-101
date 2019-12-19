@@ -22,7 +22,6 @@ int main(){
 
 	mainmenu();
 screenclear();
-cout<<"\n\tQuit\n\n";
-exitter();
+exitter("\n\tQuit\n\n");
     return 0;
 }

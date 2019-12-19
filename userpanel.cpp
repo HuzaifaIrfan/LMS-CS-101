@@ -124,7 +124,7 @@ void showmybooks(){
 
 	my_books();
 
- exitter();
+ exitter("");
 }
 
 
@@ -269,7 +269,7 @@ cout<<"\tNo Books Available in the Library\n";
 }
 
 
- exitter();
+ exitter("");
 
 
 
@@ -416,7 +416,7 @@ void book_deposit(){
 	setupuser();
 
 
- exitter();
+ exitter("");
 
 }
 
@@ -451,8 +451,7 @@ void user_login(){
 
 		user_panel();
 	}else{
-		cout<<"Wrong Username"<<endl;
-		 exitter();
+		 exitter("Wrong Username");
 	}
 
 
@@ -484,7 +483,7 @@ void user_panel()
 		cout << "\n\t1. My Books" << endl;
 		cout << "\t2. Loan a book" << endl;
 		cout << "\t3. Deposit book" << endl;
-		cout << "\t4. Logout" << endl;
+		cout << "\t0. Logout" << endl;
   cout << "\t " ;
 cin>>ch;
 		switch (ch)
@@ -498,12 +497,12 @@ cin>>ch;
 		case '3':
 			book_deposit();
 			break;
-		case '4':
+		case '0':
+		exitter("Logging out");
         loginstatus=false;
 			break;
 		default:
-			cout << "Invalid choice::Please try again!!" << endl;
-			 exitter();
+			 exitter( "Invalid choice::Please try again!!\n" );
 		}
 
 

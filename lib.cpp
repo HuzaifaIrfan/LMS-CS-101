@@ -14,15 +14,18 @@ using namespace std;
 
 
 
-void exitter(){
+void exitter(string str){
 
-                    cout<<"\t Enter any character to return\n";
+
+                cout<<"\t "<<str<<"\n";
+                 cout<<"\t Enter any character to return\n";
                 char ch;
                 cout << "\t " ;
                 cin>>ch;
 }
 
 void screenclear(){
+   
         system("clear");
 
 }

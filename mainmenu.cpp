@@ -24,7 +24,7 @@ cout<<"\n\t Library Management System \n";
         cout<<"\n\t Main Menu\n\n";
         cout<<"\t1 Login to Admin Panel\n";
         cout<<"\t2 Login to User Panel\n";
-        cout<<"\t3 EXIT\n";
+        cout<<"\t0 EXIT\n";
 
         
         char ch;
@@ -38,11 +38,11 @@ cout<<"\n\t Library Management System \n";
             case '2':
                user_login();
                 break;
-            case '3':
+            case '0':
                 notexit=false;
                 break;
             default:
-                cout << "Invalid Choice" << endl;
+                exitter("Invalid Choice");
         }
 
     }
