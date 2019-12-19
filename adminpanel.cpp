@@ -9,6 +9,9 @@ void admin_login();
 
 
 
+
+
+
 vector<string> users={};
 vector<string> books={};
 
@@ -82,7 +85,7 @@ void savebooks(){
 void adduser(){
 
 
-    system("clear");
+    screenclear();
 
 
     if(users.size()>=10){
@@ -163,10 +166,7 @@ void adduser(){
 
 
 
-                cout<<"\t0. EXIT\n";
-                char ch;
-                cout << "\t " ;
-                cin>>ch;
+ exitter();
 
 }
 
@@ -180,7 +180,7 @@ void adduser(){
 void deleteuser(){
 
 
-    system("clear");
+  screenclear();
 
     string username;
     cout<<"Enter Username to Delete\n";
@@ -210,11 +210,8 @@ void deleteuser(){
 
 
 
-                cout<<"\t0. EXIT\n";
-                char ch;
-                cout << "\t " ;
-                cin>>ch;
 
+ exitter();
 
     setup();
 
@@ -226,7 +223,7 @@ void deleteuser(){
 void searchuser(){
 
 
-    system("clear");
+    screenclear();
 
 
     string username;
@@ -315,10 +312,7 @@ cout<<"Outstanding book"<<endl;
             }
 
 
-                cout<<"\t0. EXIT\n";
-                char ch;
-                cout << "\t " ;
-                cin>>ch;
+ exitter();
 
 }
 
@@ -330,7 +324,7 @@ cout<<"Outstanding book"<<endl;
 void listusers(){
 
 
-            system("clear");
+           screenclear();
 
             vector<string> usernamelst;
 
@@ -366,7 +360,7 @@ void listusers(){
 void statusbooks(){
 
 
-            system("clear");
+            screenclear();
 
 
 
@@ -417,10 +411,7 @@ bool found=false;
 
 
 
-                cout<<"\t0. EXIT\n";
-                char ch;
-                cout << "\t " ;
-                cin>>ch;
+ exitter();
     
 
 }
@@ -429,7 +420,7 @@ bool found=false;
 void listbooks(){
 
 
-            system("clear");
+            screenclear();
 
 
 
@@ -439,9 +430,9 @@ void listbooks(){
 
         tokenize(book,'|', bookvect);
 
-    cout<<"Id : "<<bookvect[0]<<endl;
-    cout<<"Name : "<<bookvect[1]<<endl;
-    cout<<"Author : "<<bookvect[2]<<endl<<endl;
+        cout<<"Id : "<<bookvect[0]<<endl;
+        cout<<"Name : "<<bookvect[1]<<endl;
+        cout<<"Author : "<<bookvect[2]<<endl<<endl;
 
 
     }
@@ -453,10 +444,7 @@ void listbooks(){
 
 
 
-                  cout<<"\t0. EXIT\n";
-                char ch;
-                cout << "\t " ;
-                cin>>ch;
+ exitter();
 
     
 
@@ -509,7 +497,7 @@ void admin_panel()
     bool loginstatus=true;
 
     while(loginstatus){
-        system("clear");
+        screenclear();
         cout << "\n\t Admin Menu\n" << endl;
         cout << "\t1. Create User" << endl;
         cout << "\t2. Delete User" << endl;
@@ -549,6 +537,7 @@ void admin_panel()
             break;
             default:
                 cout << "Invalid Choice" << endl;
+                 exitter();
             }
 
 

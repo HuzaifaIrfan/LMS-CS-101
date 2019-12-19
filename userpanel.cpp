@@ -52,7 +52,7 @@ void setupuser(){
 
 void my_books(){
 
-    system("clear");
+   screenclear();
     if(myvect[2]!="0"){
 
                     vector<string> userbooksvect;
@@ -118,21 +118,20 @@ void my_books(){
 }
 
 
+
+
 void showmybooks(){
 
 	my_books();
 
-                cout<<"\t0. EXIT\n";
-                char ch;
-                cout << "\t " ;
-                cin>>ch;
+ exitter();
 }
 
 
 
 void book_loan(){
 
-   system("clear");
+   screenclear();
 
 if(userbooksvect.size()>=4){
 
@@ -269,10 +268,8 @@ cout<<"\tNo Books Available in the Library\n";
 
 }
 
-                cout<<"\t0. EXIT\n";
-                char ch;
-                cout << "\t " ;
-                cin>>ch;
+
+ exitter();
 
 
 
@@ -419,10 +416,7 @@ void book_deposit(){
 	setupuser();
 
 
-                cout<<"\t0. EXIT\n";
-                char ch;
-                cout << "\t " ;
-                cin>>ch;
+ exitter();
 
 }
 
@@ -431,7 +425,7 @@ void book_deposit(){
 
 void user_login(){
 
-	username="ezaz";
+	username="huzaifa";
 	cout<<"Enter Your name??\n";
 	cin>>username;
 
@@ -441,20 +435,34 @@ void user_login(){
            vector<string> uservect;
            tokenize(user,'|', uservect);
 
-	if(uservect[1]==username){
+			if(uservect[1]==username){
 
-	loginstate=true;
-
-	}
-	}
-
-	if(loginstate=true){
-
+				loginstate=true;
 		setup();
 		setupuser();
+
+			}
+
+	}
+
+	if(loginstate==true){
+
+
+
 		user_panel();
 	}else{
 		cout<<"Wrong Username"<<endl;
+		 exitter();
+	}
+
+
+
+
+
+
+
+	if(loginstate==true){
+		user_panel();
 	}
 
 
@@ -468,7 +476,7 @@ void user_panel()
     bool loginstatus=true;
 
     while(loginstatus){
-        system("clear");
+       screenclear();
       
 	char ch;
 	cout << "\n\t Logged in as "<<username << endl;
@@ -495,6 +503,7 @@ cin>>ch;
 			break;
 		default:
 			cout << "Invalid choice::Please try again!!" << endl;
+			 exitter();
 		}
 
 

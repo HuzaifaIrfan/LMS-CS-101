@@ -12,6 +12,32 @@ using namespace std;
 
 
 
+
+
+void exitter(){
+
+                    cout<<"\t Enter any character to return\n";
+                char ch;
+                cout << "\t " ;
+                cin>>ch;
+}
+
+void screenclear(){
+        system("clear");
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 void delete_line(const char *file_name, int n) { 
     // open file in read mode or in mode 
     ifstream is(file_name); 
@@ -105,18 +131,3 @@ void tokenize(string const &str, const char delim, vector<string> &out)
 	}
 }
 
-
-
-
-void LowerCase(string & str){
-	int len = str.length();
-
-	for( int i = 0; i < len; i++ ) 
-	{
-		if ( str[i] >= 'A' && str[i] <= 'Z' ) 
-		{
-			str[i] -= 'A' - 'a';
-		}
-	}
-
-}

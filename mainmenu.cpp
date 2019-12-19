@@ -3,13 +3,20 @@
 #include"userpanel.cpp"
 using namespace std;
 
+
+
+
+
+
+
+
 void mainmenu(){
 
     bool notexit=true;
-
+screenclear();
 
     while(notexit){
-        system("clear");
+
 
 cout<<"\n\t Library Management System \n";
 

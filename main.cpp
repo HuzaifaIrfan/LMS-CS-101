@@ -21,7 +21,8 @@ using namespace std;
 int main(){
 
 	mainmenu();
-system("clear");
+screenclear();
 cout<<"\n\tQuit\n\n";
+exitter();
     return 0;
 }
