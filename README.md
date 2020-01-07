@@ -1,6 +1,6 @@
 # Library Management System (LMS) IN C++
 ## Use GCC C++ compiler for compilation.
-This project is dedicated to my giki Friend (EZAZ HUSSAIN).
+This project is dedicated to my GIKI Friend (EZAZ HUSSAIN).
 
 <div>
  GIKI CS-101 Semester Project
