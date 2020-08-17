@@ -2,6 +2,9 @@
 ## Use GCC C++ compiler for compilation.
 This project is dedicated to my GIKI Friend (EZAZ HUSSAIN).
 
+## Screen Shot
+![Screen Shot](/img/app-ss.png)
+
 <div>
  GIKI CS-101 Semester Project
 Option 2
