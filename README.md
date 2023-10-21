@@ -2,7 +2,7 @@
 
 <div align="center">
   <h1>Library Management System (LMS) IN C++</h1>
-  <p><h3 align="center">Hello World example project 🚀</h3></p>
+  <p><h3 align="center"> CS-101 Semester Project 🚀</h3></p>
 </div>
 
 [Project Template](Project%20Template.pdf)
