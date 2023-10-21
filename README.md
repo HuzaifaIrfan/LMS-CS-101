@@ -1,26 +1,62 @@
-# Library Management System (LMS) IN C++
-## Use GCC C++ compiler for compilation.
+<br />
 
-## Screen Shot
+<div align="center">
+  <h1>Library Management System (LMS) IN C++</h1>
+  <p><h3 align="center">Hello World example project 🚀</h3></p>
+</div>
+
+[Project Template](Project%20Template.pdf)
+&nbsp;&nbsp;•&nbsp;&nbsp;
+
+
+<hr>
+
+<div align="center">
+
+![GCC - C++](https://img.shields.io/badge/gcc-v11+-blue.svg)
+![GitHub Stars](https://img.shields.io/github/stars/HuzaifaIrfan/LMS-CS-101.svg)
+![GitHub Issues](https://img.shields.io/github/issues/HuzaifaIrfan/LMS-CS-101.svg)
+![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+
 ![Screen Shot](/img/app-ss.png)
 
-<div>
- GIKI CS-101 Semester Project
-Option 2
+![Screen Shot](/img/books.png)
+
+</div>
+
+## Info
+
+GIKI CS-101 Semester Project
  <br>
 Starting : 14 Dec 2019  10 AM
  <br>
 Completion : 14 Dec 2019 8 PM
- <br>
- By Huzaifa Irfan
- <br>
- ME-11 (C)
- <br>
- SMME, 
- NUST, Islamabad
- </div>
 
+## Compiling
 
-<!-- ## Testimonial From Ezaz
-During my first year at the institute, I was given a project based on c++ program. The project was to build a library managemnet system with some complex features. Currently I'm not bad at code but at that time I was learning how to code. That it is why it was a difficult task for me to make it alone. I utilized my precious time and made it, till my approach and at the end I messed up. Mr.Huzaifa a great friend and a great mentor helped me to get through this. He helped me to complete this project and it was submitted before deadline. No doubt he is good programmer with a skill to do and understand code.
- -->
+Use GCC C++ compiler for compilation.
+
+```bash
+gcc main.cpp
+```
+
+## Usage
+
+```bash
+./a.out
+```
+
+## 🤝🏻 &nbsp;Connect with Me
+
+<p align="center">
+<a href="https://www.huzaifairfan.com"><img src="https://img.shields.io/badge/-huzaifairfan.com-1aa260?style=flat&logo=Google-Chrome&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/huzaifairfan/"><img src="https://img.shields.io/badge/-Huzaifa%20Irfan-0072b1?style=flat&logo=Linkedin&logoColor=white"/></a>
+<a href="https://github.com/HuzaifaIrfan/"><img src="https://img.shields.io/badge/-Huzaifa%20Irfan-4078c0?style=flat&logo=Github&logoColor=white"/></a>
+<a href="mailto:contact@huzaifairfan.com"><img src="https://img.shields.io/badge/-contact@huzaifairfan.com-c71610?style=flat&logo=Gmail&logoColor=white"/></a>
+<a href="https://www.instagram.com/huzaifairfan2001/"><img src="https://img.shields.io/badge/-@huzaifairfan2001-cd486b?style=flat&logo=Instagram&logoColor=white"/></a>
+<a href="https://www.facebook.com/huzaifairfan2001/"><img src="https://img.shields.io/badge/-@huzaifairfan2001-4267B2?style=flat&logo=Facebook&logoColor=white"/></a>
+</p>
+
+## License
+
+Licensed under the MIT License, Copyright 2023 Huzaifa Irfan. [LICENSE](LICENSE)
